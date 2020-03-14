@@ -16,10 +16,6 @@ class User():
         pass
 
 
-class Server():
-
-
-
 class Internet():
 
     def transfer():

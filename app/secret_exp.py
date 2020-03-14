@@ -1,10 +1,15 @@
 import math
+# import random
 
 
 class Crypto:
 
+    def getRandomNumber(self, min, max, isBasic):
+        return 0
+
     # N
-    def generateRSAKey(a, b):
+    def generateRSAKey(self, a, b):
+        a = self.getRandomNumber(1, 1000, True)
         return a * b
 
     # d
@@ -34,6 +39,3 @@ class Crypto:
         de_crypted = math.modf(value)[0]
         # m_reserve = math.modf(value)[1]
         return de_crypted
-
-crypto = Crypto();
-crypto
