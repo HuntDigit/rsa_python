@@ -4,6 +4,19 @@ import math
 
 class Crypto:
 
+    def buildPrimeNumbers(self, max):
+        list = []
+        k = 0
+        for i in range(2, max+1):
+            for j in range(2, i):
+                if i % j == 0:
+                    k = k + 1
+            if k == 0:
+                list.append(i)
+            else:
+                k = 0
+        return list
+
     def getRandomNumber(self, min, max, isBasic):
         return 0
 
