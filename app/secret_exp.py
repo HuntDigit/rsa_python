@@ -1,5 +1,5 @@
 import math
-# import random
+import random
 
 
 class Crypto:
@@ -18,37 +18,41 @@ class Crypto:
         return list
 
     def getRandomNumber(self, min, max, isBasic):
-        return 0
+        value = random.randint(min, max)
+        return value
+
+    def findExp(self, fi, array):
+        for n in array:
+            if (fi / n).is_integer() is False:
+                return n
+        return None
 
     # N
     def generateRSAKey(self, a, b):
-        a = self.getRandomNumber(1, 1000, True)
         return a * b
 
     # d
-    def secretExp(fi, e):
+    def secretExp(self, fi, e):
         k = 1
         max = 10000
         while True:
             d = (fi * k + 1) / e
-            if d.is_integer():
+            if d.is_integer() is True:
                 return d
             k = k + 1
             if k == max:
                 return None
 
     # fi
-    def eilerFunction(a, b):
+    def eilerFunction(self, a, b):
         return (a-1) * (b-1)
 
-    def encrypt(e, rsa, message):
+    def encrypt(self, e, rsa, message):
         value = message ** e
-        m_crypted = math.modf(value)[0]
-        # m_reserve = math.modf(value)[1]
+        m_crypted = value // rsa
         return m_crypted
 
-    def decrypt(d, rsa, message):
+    def decrypt(self, d, rsa, message):
         value = message ** d
-        de_crypted = math.modf(value)[0]
-        # m_reserve = math.modf(value)[1]
+        de_crypted = value // rsa
         return de_crypted

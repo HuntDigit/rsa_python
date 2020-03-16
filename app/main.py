@@ -1,4 +1,4 @@
-
+import secret_exp
 
 class CardInfo():
 
@@ -26,3 +26,32 @@ class Hacker():
 
     def hack():
         pass
+
+crypto = secret_exp.Crypto()
+array = crypto.buildPrimeNumbers(60)
+number = crypto.getRandomNumber(0, len(array)-1, False)
+A = array[number]
+print(A)
+number = crypto.getRandomNumber(0, len(array)-1, False)
+B = array[number]
+print(B)
+
+N = crypto.generateRSAKey(A, B)
+print(N)
+fi = crypto.eilerFunction(A, B)
+print(fi)
+e = crypto.findExp(fi, array)
+print(e)
+d = crypto.secretExp(fi, e)
+print(d)
+
+message = 62
+print('message')
+print(message)
+
+secretmessage = crypto.encrypt(e, N, message)
+print('secret mesage')
+print(secretmessage)
+decryptedmessage = crypto.decrypt(d, N, secretmessage)
+print('decrypted mesage')
+print(decryptedmessage)
