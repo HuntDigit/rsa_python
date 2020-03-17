@@ -21,6 +21,7 @@ class Crypto:
         value = random.randint(min, max)
         return value
 
+    # e
     def findExp(self, fi, array):
         for n in array:
             if (fi / n).is_integer() is False:
@@ -49,10 +50,10 @@ class Crypto:
 
     def encrypt(self, e, rsa, message):
         value = message ** e
-        m_crypted = value // rsa
+        m_crypted = value % rsa
         return m_crypted
 
     def decrypt(self, d, rsa, message):
         value = message ** d
-        de_crypted = value // rsa
+        de_crypted = value % rsa
         return de_crypted

@@ -31,27 +31,25 @@ crypto = secret_exp.Crypto()
 array = crypto.buildPrimeNumbers(60)
 number = crypto.getRandomNumber(0, len(array)-1, False)
 A = array[number]
-print(A)
+print("A: " + str(A))
 number = crypto.getRandomNumber(0, len(array)-1, False)
 B = array[number]
-print(B)
+print("B: " + str(B))
 
 N = crypto.generateRSAKey(A, B)
-print(N)
+print("N: " + str(N))
 fi = crypto.eilerFunction(A, B)
-print(fi)
+print("fi: " + str(fi))
 e = crypto.findExp(fi, array)
-print(e)
+print("e: " + str(e))
 d = crypto.secretExp(fi, e)
-print(d)
+print("d: " + str(d))
 
 message = 62
-print('message')
-print(message)
+print('message: ' + str(message))
 
 secretmessage = crypto.encrypt(e, N, message)
-print('secret mesage')
-print(secretmessage)
+print('secretmessage: ' + str(secretmessage))
+
 decryptedmessage = crypto.decrypt(d, N, secretmessage)
-print('decrypted mesage')
-print(decryptedmessage)
+print('decryptedmessage: ' + str(decryptedmessage))
