@@ -1,5 +1,6 @@
 import secret_exp
 
+
 class CardInfo():
 
     card_number = ''
@@ -27,12 +28,13 @@ class Hacker():
     def hack():
         pass
 
+
 crypto = secret_exp.Crypto()
-array = crypto.buildPrimeNumbers(60)
-number = crypto.getRandomNumber(0, len(array)-1, False)
+array = crypto.buildPrimeNumbers(200)
+number = crypto.getRandomNumber(20, len(array)-1, False)
 A = array[number]
 print("A: " + str(A))
-number = crypto.getRandomNumber(0, len(array)-1, False)
+number = crypto.getRandomNumber(40, len(array)-1, False)
 B = array[number]
 print("B: " + str(B))
 
@@ -45,7 +47,7 @@ print("e: " + str(e))
 d = crypto.secretExp(fi, e)
 print("d: " + str(d))
 
-message = 62
+message = 721
 print('message: ' + str(message))
 
 secretmessage = crypto.encrypt(e, N, message)

@@ -1,4 +1,3 @@
-import math
 import random
 
 
@@ -37,9 +36,9 @@ class Crypto:
         k = 1
         max = 10000
         while True:
-            d = (fi * k + 1) / e
+            d = ((fi * k) + 1) / e
             if d.is_integer() is True:
-                return d
+                return int(d)
             k = k + 1
             if k == max:
                 return None
