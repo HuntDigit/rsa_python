@@ -1,4 +1,3 @@
-import math
 import random
 
 
@@ -21,6 +20,7 @@ class Crypto:
         value = random.randint(min, max)
         return value
 
+    # e
     def findExp(self, fi, array):
         for n in array:
             if (fi / n).is_integer() is False:
@@ -36,9 +36,9 @@ class Crypto:
         k = 1
         max = 10000
         while True:
-            d = (fi * k + 1) / e
+            d = ((fi * k) + 1) / e
             if d.is_integer() is True:
-                return d
+                return int(d)
             k = k + 1
             if k == max:
                 return None
@@ -49,10 +49,10 @@ class Crypto:
 
     def encrypt(self, e, rsa, message):
         value = message ** e
-        m_crypted = value // rsa
+        m_crypted = value % rsa
         return m_crypted
 
     def decrypt(self, d, rsa, message):
         value = message ** d
-        de_crypted = value // rsa
+        de_crypted = value % rsa
         return de_crypted
