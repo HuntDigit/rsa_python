@@ -1,34 +1,5 @@
 import secret_exp
 
-
-class CardInfo():
-
-    card_number = ''
-    card_cvv = ''
-    card_due_date = ''
-
-
-class User():
-
-    def sendCardInfo(model):
-        pass
-
-    def encryptCardInfo(rsa, exp):
-        pass
-
-
-class Internet():
-
-    def transfer():
-        pass
-
-
-class Hacker():
-
-    def hack():
-        pass
-
-
 crypto = secret_exp.Crypto()
 array = crypto.buildPrimeNumbers(200)
 number = crypto.getRandomNumber(20, len(array)-1, False)
