@@ -1,7 +1,7 @@
 import random
 
 
-class Crypto:
+class RSAHelper:
 
     def buildPrimeNumbers(self, max):
         list = []
@@ -32,9 +32,8 @@ class Crypto:
         return a * b
 
     # d
-    def secretExp(self, fi, e):
+    def secretExp(self, fi, e, max=1000):
         k = 1
-        max = 10000
         while True:
             d = ((fi * k) + 1) / e
             if d.is_integer() is True:
