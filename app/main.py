@@ -1,7 +1,6 @@
 from pythonRSA import *
 
 
-
 crypto = RSAHelper()
 array = crypto.buildPrimeNumbers(1000)
 number = crypto.getRandomNumber(100, len(array)-1, False)
@@ -20,7 +19,8 @@ fi = crypto.eilerFunction(A, B)
 e = crypto.findExp(fi, array)
 d = crypto.secretExp(fi, e)
 
-print('A' + 'B' + 'N' + 'fi' + 'e' + 'd')
+loger = 'A: \t{0} \nB: \t{1} \nN: \t{2} \nfi: \t{3} \ne: \t{4} \nd: \t{5}'.format(A, B, N, fi, e, d)
+print('\n---------------\n' + loger + '\n---------------\n')
 
 
 def encryptMessage(message, e, N):
