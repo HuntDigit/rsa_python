@@ -22,9 +22,6 @@ d = crypto.secretExp(fi, e)
 loger = 'A: \t{0} \nB: \t{1} \nN: \t{2} \nfi: \t{3} \ne: \t{4} \nd: \t{5}'.format(A, B, N, fi, e, d)
 print('\n---------------\n' + loger + '\n---------------\n')
 
-def emptyFunction():
-    return 0
-
 def encryptMessage(message, e, N):
 
     list_encrypted_numbers = []
